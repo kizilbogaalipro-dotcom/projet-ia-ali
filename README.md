@@ -1,7 +1,7 @@
 # Réponse aux avis clients — Le Fournil des Monts
 
-> Projet IA — BTS SIO 2 SLAM — Ali [NOM] — octobre 2026
-> **URL publique** : https://[…].trycloudflare.com — code d'accès envoyé à l'enseignant par e-mail
+> Projet IA — BTS SIO 2 SLAM — Ali KIZILBOGA — octobre 2026
+> **URL publique** : docker compose logs tunnel — code d'accès envoyé à l'enseignant par e-mail
 
 ## 1. Concevoir
 
