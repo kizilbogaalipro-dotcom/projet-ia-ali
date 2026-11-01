@@ -37,6 +37,15 @@ if len(CODE_ACCES) < 8:
 ICI = Path(__file__).parent
 CONSIGNE = (ICI / "prompt.txt").read_text(encoding="utf-8")
 
+SIGNATURE = "L'équipe du Fournil des Monts"
+
+
+def signer(texte: str) -> str:
+    """Garantit la signature, seule sur la dernière ligne."""
+    texte = texte.strip().replace("’", "'")
+    if texte.endswith(SIGNATURE):
+        texte = texte[: -len(SIGNATURE)].strip()
+    return texte + "\n" + SIGNATURE
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 journal = logging.getLogger("projet-ia")
 
@@ -114,5 +123,5 @@ async def demander(d: Demande, req: Request):
         raise HTTPException(502, "Le modèle ne répond pas. Réessayez dans un instant.")
     journal.info("réponse en %.2f s · %s · %s · %d caractères en entrée · %s",
                  res["duree_s"], res["fournisseur"], res["modele"], len(texte), qui)
-    return {"reponse": res["texte"], "duree_s": res["duree_s"],
+    return {"reponse": signer(res["texte"]), "duree_s": res["duree_s"],
             "modele": res["modele"], "fournisseur": res["fournisseur"]}

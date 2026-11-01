@@ -38,7 +38,10 @@ def demander(base: str, code: str, texte: str) -> tuple[str, float, str]:
 def juger(reponse: str, cas: dict) -> bool:
     bas = reponse.lower()
     ok = all(m.lower() in bas for m in cas.get("doit_contenir", []))
-    return ok and not any(m.lower() in bas for m in cas.get("ne_doit_pas", []))
+    ok = ok and not any(m.lower() in bas for m in cas.get("ne_doit_pas", []))
+    if "max_mots" in cas:
+        ok = ok and len(reponse.split()) <= cas["max_mots"]
+    return ok
 
 
 def main() -> None:
