@@ -2,7 +2,10 @@
 
 > Projet IA — BTS SIO 2 SLAM — Ali KIZILBOGA — octobre 2026
 **URL publique** : https://flashing-console-lan-breaking.trycloudflare.com — code d'accès envoyé à l'enseignant par e-mail
+ HEAD
 
+
+ 6d3fbd6e21fa56e4090b2cb97b58852d9e0a339c
 ## 1. Concevoir
 
 **Sujet choisi** : n° 4 — Réponse aux avis clients — Le Fournil des Monts
